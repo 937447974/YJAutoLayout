@@ -17,11 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+//    [self.view.trailingAnchor constraintEqualToAnchor:nil]; Layout.equalTo(greenView.trailingLayout).constant(20)
+//    greenView.topLayout.equalTo(self.view.topLayoutGuide.bottomLayout).constant(20)
+//    self.view.topLayoutGuide
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

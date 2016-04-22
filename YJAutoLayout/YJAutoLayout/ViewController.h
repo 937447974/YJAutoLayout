@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NSInteger (^ Block)(NSInteger c);
+
 @interface ViewController : UIViewController
 
+@property (nonatomic, copy) Block block;
 
 @end
 

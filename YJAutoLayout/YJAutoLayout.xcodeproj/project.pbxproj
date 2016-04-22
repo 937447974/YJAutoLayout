@@ -15,6 +15,13 @@
 		846590841CC9F6FC0068F6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846590821CC9F6FC0068F6D8 /* LaunchScreen.storyboard */; };
 		8465908F1CC9F6FC0068F6D8 /* YJAutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465908E1CC9F6FC0068F6D8 /* YJAutoLayoutTests.m */; };
 		8465909A1CC9F6FC0068F6D8 /* YJAutoLayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590991CC9F6FC0068F6D8 /* YJAutoLayoutUITests.m */; };
+		846590AE1CC9F9410068F6D8 /* YJAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590AD1CC9F9410068F6D8 /* YJAutoLayout.m */; };
+		846590B71CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590B61CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.m */; };
+		846590BD1CCA31B00068F6D8 /* UIView+YJAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590BC1CCA31B00068F6D8 /* UIView+YJAutoLayout.m */; };
+		846590C41CCA34270068F6D8 /* YJLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590C31CCA34270068F6D8 /* YJLayoutAnchor.m */; };
+		846590C71CCA3A520068F6D8 /* YJLayoutXAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590C61CCA3A520068F6D8 /* YJLayoutXAxisAnchor.m */; };
+		846590CA1CCA3A650068F6D8 /* YJLayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590C91CCA3A650068F6D8 /* YJLayoutDimension.m */; };
+		846590CD1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 846590CC1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,20 @@
 		846590951CC9F6FC0068F6D8 /* YJAutoLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YJAutoLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846590991CC9F6FC0068F6D8 /* YJAutoLayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJAutoLayoutUITests.m; sourceTree = "<group>"; };
 		8465909B1CC9F6FC0068F6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846590AC1CC9F9410068F6D8 /* YJAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJAutoLayout.h; sourceTree = "<group>"; };
+		846590AD1CC9F9410068F6D8 /* YJAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJAutoLayout.m; sourceTree = "<group>"; };
+		846590B51CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+YJExtend.h"; sourceTree = "<group>"; };
+		846590B61CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+YJExtend.m"; sourceTree = "<group>"; };
+		846590BB1CCA31B00068F6D8 /* UIView+YJAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJAutoLayout.h"; sourceTree = "<group>"; };
+		846590BC1CCA31B00068F6D8 /* UIView+YJAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJAutoLayout.m"; sourceTree = "<group>"; };
+		846590C21CCA34270068F6D8 /* YJLayoutAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJLayoutAnchor.h; sourceTree = "<group>"; };
+		846590C31CCA34270068F6D8 /* YJLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJLayoutAnchor.m; sourceTree = "<group>"; };
+		846590C51CCA3A520068F6D8 /* YJLayoutXAxisAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJLayoutXAxisAnchor.h; sourceTree = "<group>"; };
+		846590C61CCA3A520068F6D8 /* YJLayoutXAxisAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJLayoutXAxisAnchor.m; sourceTree = "<group>"; };
+		846590C81CCA3A650068F6D8 /* YJLayoutDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJLayoutDimension.h; sourceTree = "<group>"; };
+		846590C91CCA3A650068F6D8 /* YJLayoutDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJLayoutDimension.m; sourceTree = "<group>"; };
+		846590CB1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJLayoutYAxisAnchor.h; sourceTree = "<group>"; };
+		846590CC1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJLayoutYAxisAnchor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +174,8 @@
 			children = (
 				846590A91CC9F8E40068F6D8 /* Core */,
 				846590AA1CC9F8E40068F6D8 /* Extend */,
+				846590AC1CC9F9410068F6D8 /* YJAutoLayout.h */,
+				846590AD1CC9F9410068F6D8 /* YJAutoLayout.m */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -161,6 +184,9 @@
 		846590A91CC9F8E40068F6D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				846590BE1CCA335B0068F6D8 /* Layout */,
+				846590BB1CCA31B00068F6D8 /* UIView+YJAutoLayout.h */,
+				846590BC1CCA31B00068F6D8 /* UIView+YJAutoLayout.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -168,6 +194,8 @@
 		846590AA1CC9F8E40068F6D8 /* Extend */ = {
 			isa = PBXGroup;
 			children = (
+				846590B51CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.h */,
+				846590B61CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -179,6 +207,21 @@
 				8465907B1CC9F6FC0068F6D8 /* ViewController.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		846590BE1CCA335B0068F6D8 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				846590C21CCA34270068F6D8 /* YJLayoutAnchor.h */,
+				846590C31CCA34270068F6D8 /* YJLayoutAnchor.m */,
+				846590C81CCA3A650068F6D8 /* YJLayoutDimension.h */,
+				846590C91CCA3A650068F6D8 /* YJLayoutDimension.m */,
+				846590C51CCA3A520068F6D8 /* YJLayoutXAxisAnchor.h */,
+				846590C61CCA3A520068F6D8 /* YJLayoutXAxisAnchor.m */,
+				846590CB1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.h */,
+				846590CC1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.m */,
+			);
+			name = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +286,7 @@
 		846590691CC9F6FC0068F6D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YJ;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = YJ;
 				TargetAttributes = {
@@ -311,9 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846590BD1CCA31B00068F6D8 /* UIView+YJAutoLayout.m in Sources */,
+				846590CA1CCA3A650068F6D8 /* YJLayoutDimension.m in Sources */,
+				846590C71CCA3A520068F6D8 /* YJLayoutXAxisAnchor.m in Sources */,
 				8465907C1CC9F6FC0068F6D8 /* ViewController.m in Sources */,
+				846590C41CCA34270068F6D8 /* YJLayoutAnchor.m in Sources */,
+				846590B71CCA30780068F6D8 /* NSLayoutConstraint+YJExtend.m in Sources */,
 				846590791CC9F6FC0068F6D8 /* AppDelegate.m in Sources */,
+				846590CD1CCA3A890068F6D8 /* YJLayoutYAxisAnchor.m in Sources */,
 				846590761CC9F6FC0068F6D8 /* main.m in Sources */,
+				846590AE1CC9F9410068F6D8 /* YJAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YJAutoLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YJ.YJAutoLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YJAutoLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YJ.YJAutoLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
