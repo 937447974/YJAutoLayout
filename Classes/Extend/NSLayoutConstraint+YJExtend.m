@@ -12,6 +12,12 @@
 
 #pragma mark - (+)
 #pragma mark NSLayoutRelationEqual
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 equalToConstant:(CGFloat)c {
+    
+    return [self constraintWithItem:view1 attribute:attr1 equalToItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:c];
+    
+}
+
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 equalToItem:(id)view2 attribute:(NSLayoutAttribute)attr2 {
     
     return [self constraintWithItem:view1 attribute:attr1 equalToItem:view2 attribute:attr2 multiplier:1 constant:0];
@@ -31,6 +37,12 @@
 }
 
 #pragma mark NSLayoutRelationLessThanOrEqual
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 lessThanOrEqualToConstant:(CGFloat)c {
+    
+    return [self constraintWithItem:view1 attribute:attr1 lessThanOrEqualToItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:c];
+    
+}
+
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 lessThanOrEqualToItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2 {
     
     return [self constraintWithItem:view1 attribute:attr1 lessThanOrEqualToItem:view2 attribute:attr2 multiplier:1 constant:0];
@@ -50,6 +62,12 @@
 }
 
 #pragma mark NSLayoutRelationGreaterThanOrEqual
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 greaterThanOrEqualToConstant:(CGFloat)c {
+    
+    return [self constraintWithItem:view1 attribute:attr1 greaterThanOrEqualToItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:c];
+    
+}
+
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 greaterThanOrEqualToItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2 {
     
     return [self constraintWithItem:view1 attribute:attr1 greaterThanOrEqualToItem:view2 attribute:attr2 multiplier:1 constant:0];

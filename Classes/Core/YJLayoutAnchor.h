@@ -42,7 +42,7 @@ typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor<YJ
 /** 仿NSLayoutAnchor*/
 @interface YJLayoutAnchor<YJAnchorType> : NSObject <YJLayoutAnchorProtocol>
 
-@property (nonatomic, readonly) id item;
+@property (nonatomic, readonly, nullable) id item;
 @property (nonatomic, readonly) NSLayoutAttribute attribute;
 
 - (instancetype)initWithItem:(id)item attribute:(NSLayoutAttribute)attribute;

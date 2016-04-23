@@ -26,6 +26,15 @@ typedef NSLayoutConstraint * _Nonnull (^ Constant)(CGFloat constant);
 /**
  *  生成NSLayoutConstraint
  *
+ *  relatedBy = NSLayoutRelationEqual;view2 = nil; multiplier = 1;
+ *
+ *  @return NSLayoutConstraint
+ */
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 equalToConstant:(CGFloat)c;
+
+/**
+ *  生成NSLayoutConstraint
+ *
  *  relatedBy = NSLayoutRelationEqual; multiplier = 1; constant = 0;
  *
  *  @return NSLayoutConstraint
@@ -54,6 +63,15 @@ typedef NSLayoutConstraint * _Nonnull (^ Constant)(CGFloat constant);
 /**
  *  生成NSLayoutConstraint
  *
+ *  relatedBy = NSLayoutRelationEqual;view2 = nil; multiplier = 1;
+ *
+ *  @return NSLayoutConstraint
+ */
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 lessThanOrEqualToConstant:(CGFloat)c;
+
+/**
+ *  生成NSLayoutConstraint
+ *
  *  relatedBy = NSLayoutRelationLessThanOrEqual; multiplier = 1; constant = 0;
  *
  *  @return NSLayoutConstraint
@@ -79,6 +97,15 @@ typedef NSLayoutConstraint * _Nonnull (^ Constant)(CGFloat constant);
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 lessThanOrEqualToItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c;
 
 #pragma mark NSLayoutRelationGreaterThanOrEqual
+/**
+ *  生成NSLayoutConstraint
+ *
+ *  relatedBy = NSLayoutRelationGreaterThanOrEqual;view2 = nil; multiplier = 1;
+ *
+ *  @return NSLayoutConstraint
+ */
++ (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 greaterThanOrEqualToConstant:(CGFloat)c;
+
 /**
  *  生成NSLayoutConstraint
  *
