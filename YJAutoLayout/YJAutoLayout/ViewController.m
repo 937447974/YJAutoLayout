@@ -51,7 +51,7 @@
     self.greenView = [[UIView alloc] initWithFrame:CGRectZero];
     self.greenView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:self.greenView];
-    
+    BOOL c = [self.topLayoutGuide isKindOfClass:[UIView class]];
 //    [self testNSLayoutConstraint];
 //    [self testNSLayoutConstraintExtend];
 //    [self testNSLayoutAnchor];
@@ -141,6 +141,5 @@
     _greenView.widthLayout.equalTo(_yellowView.widthLayout);
     
 }
-
 
 @end

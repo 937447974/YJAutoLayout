@@ -22,6 +22,15 @@ typedef NSLayoutConstraint * _Nonnull (^ Constant)(CGFloat constant);
 @property (nonatomic, copy, readonly) Constant constants;
 
 #pragma mark - (+)
+/**
+ *  搜索NSLayoutConstraint
+ *
+ *  relatedBy = NSLayoutRelationEqual;view2 = nil; multiplier = 1;
+ *
+ *  @return NSLayoutConstraint
+ */
++ (nullable instancetype)findConstraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 toItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2;
+
 #pragma mark NSLayoutRelationEqual
 /**
  *  生成NSLayoutConstraint

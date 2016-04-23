@@ -14,6 +14,14 @@
 @implementation NSLayoutConstraint (YJExtend)
 
 #pragma mark - (+)
+#pragma mark 搜索NSLayoutConstraint
++ (nullable instancetype)findConstraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 toItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2 {
+    
+    UIView *superView = [self findRootView:view1 toItem:view2];
+    return [self findConstraintWithView:superView Item:view1 attribute:attr1 toItem:view2 attribute:attr2];
+    
+}
+
 #pragma mark NSLayoutRelationEqual
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 equalToConstant:(CGFloat)c {
     
@@ -90,17 +98,73 @@
 }
 
 #pragma mark base
+// 生产NSLayoutConstraint
 + (instancetype)constraintWithItem:(id)view1 attribute:(NSLayoutAttribute)attr1 relationBy:(NSLayoutRelation)relation toItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c {
     
-    NSLayoutConstraint *lc = [self constraintWithItem:view1 attribute:attr1 relatedBy:relation toItem:view2 attribute:attr2 multiplier:multiplier constant:c];
-    if ([view1 isKindOfClass:[UIView class]]) {
-        ((UIView *)view1).translatesAutoresizingMaskIntoConstraints = NO;
+    UIView *viewTemp1 = (UIView *)view1;
+    UIView *viewTemp2 = (UIView *)view2;
+    UIView *superView = [self findRootView:viewTemp1 toItem:viewTemp2];
+    NSLayoutConstraint *lc = [self findConstraintWithView:superView Item:view1 attribute:attr1 toItem:view2 attribute:attr2];
+    if (!lc) { // 首次创建
+        viewTemp2.translatesAutoresizingMaskIntoConstraints = NO;
+        viewTemp1.translatesAutoresizingMaskIntoConstraints = NO;
+        lc = [self constraintWithItem:view1 attribute:attr1 relatedBy:relation toItem:view2 attribute:attr2 multiplier:multiplier constant:c];
+        if ([lc respondsToSelector:@selector(setActive:)]) { // IOS8才支持active属性
+            [lc setActive:YES];
+        } else { // IOS8以下添加到相同父节点
+            [superView addConstraint:lc];
+        }
     }
-    if ([view2 isKindOfClass:[UIView class]]) {
-        ((UIView *)view2).translatesAutoresizingMaskIntoConstraints = NO;
-    }
-    lc.active = YES;
     return lc;
+    
+}
+
+// 从view中搜索NSLayoutConstraint
++ (nullable instancetype)findConstraintWithView:(UIView *)view Item:(id)view1 attribute:(NSLayoutAttribute)attr1 toItem:(nullable id)view2 attribute:(NSLayoutAttribute)attr2 {
+    
+    if (view2) {
+        for (NSLayoutConstraint *c in view.constraints) {
+            if (c.firstAttribute == attr1 && c.secondAttribute == attr2 && [c.firstItem isEqual:view1] && [c.secondItem isEqual:view2]) {
+                return c;
+            }
+        }
+    } else {
+        for (NSLayoutConstraint *c in view.constraints) {
+            if (c.firstAttribute == attr1 && [c.firstItem isEqual:view1]) {
+                return c;
+            }
+        }
+    }
+    return nil;
+    
+}
+
+// 寻找两个view的共同父节点
++ (UIView *)findRootView:(UIView *)view1 toItem:(nullable UIView *)view2 {
+    
+    // 算法运行时间O(n)
+    if (view2 == nil) {
+        return view1;
+    }
+    NSMutableArray<UIView *> *superviews1 = [NSMutableArray array];
+    NSMutableArray<UIView *> *superviews2 = [NSMutableArray array];
+    while (view1) {
+        [superviews1 addObject:view1];
+        view1 = view1.superview;
+    }
+    while (view2) {
+        [superviews2 addObject:view2];
+        view2 = view2.superview;
+    }
+    UIView *result;
+    NSInteger length = superviews1.count < superviews2.count ? superviews1.count : superviews2.count;
+    for (int i = 0; i<length; i++) {
+        result = superviews1[superviews1.count-length];
+        if (![result isEqual:superviews2[superviews2.count-length]]) {
+            return result;
+        }
+    }
+    return result;
     
 }
 
