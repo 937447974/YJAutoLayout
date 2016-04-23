@@ -10,6 +10,7 @@
 
 @implementation YJLayoutAnchor
 
+#pragma mark super
 - (instancetype)initWithItem:(id)item attribute:(NSLayoutAttribute)attribute {
     
     self = [super init];
@@ -18,6 +19,36 @@
         _attribute = attribute;
     }
     return self;
+    
+}
+
+#pragma mark - getter
+- (LessThanOrEqualTo)lessThanOrEqualTo {
+    
+    __weak YJLayoutAnchor *wSelf = self;
+    LessThanOrEqualTo lessThanOrEqualTo = ^ (YJLayoutAnchor<YJAnchorType> *anchor) {
+        return [NSLayoutConstraint constraintWithItem:wSelf.item attribute:wSelf.attribute lessThanOrEqualToItem:anchor.item attribute:anchor.attribute];
+    };
+    return lessThanOrEqualTo;
+}
+
+- (EqualTo)equalTo {
+    
+    __weak YJLayoutAnchor *wSelf = self;
+    EqualTo equalTo = ^ (YJLayoutAnchor<YJAnchorType> *anchor) {
+        return [NSLayoutConstraint constraintWithItem:wSelf.item attribute:wSelf.attribute equalToItem:anchor.item attribute:anchor.attribute];
+    };
+    return equalTo;
+    
+}
+
+- (GreaterThanOrEqualTo)greaterThanOrEqualTo {
+    
+    __weak YJLayoutAnchor *wSelf = self;
+    GreaterThanOrEqualTo greaterThanOrEqualTo = ^ (YJLayoutAnchor<YJAnchorType> *anchor) {
+        return [NSLayoutConstraint constraintWithItem:wSelf.item attribute:wSelf.attribute greaterThanOrEqualToItem:anchor.item attribute:anchor.attribute];
+    };
+    return greaterThanOrEqualTo;
     
 }
 

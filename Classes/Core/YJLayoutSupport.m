@@ -10,4 +10,15 @@
 
 @implementation YJLayoutSupport
 
+#pragma mark - super
+- (instancetype)initWithItem:(id<UILayoutSupport>)layoutGuide {
+    
+    self = [super init];
+    if (self) {
+        _layoutGuide = layoutGuide;
+    }
+    return self;
+    
+}
+
 @end

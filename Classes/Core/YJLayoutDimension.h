@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 相关block，链式执行
 /** NSLayoutConstraint.relation = NSLayoutRelationLessThanOrEqual and .constant = constant*/
-typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqualToConstant)(CGFloat *constant);
+typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqualToConstant)(CGFloat constant);
 /** NSLayoutConstraint.relation = NSLayoutRelationEqual and .constant = constant*/
-typedef NSLayoutConstraint * _Nonnull (^ EqualToConstant)(CGFloat *constant);
+typedef NSLayoutConstraint * _Nonnull (^ EqualToConstant)(CGFloat constant);
 /** NSLayoutConstraint.relation = NSLayoutRelationGreaterThanOrEqual and .constant = constant*/
-typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualToConstant)(CGFloat *constant);
+typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualToConstant)(CGFloat constant);
 
 
 /** YJLayoutDimension对应的协议*/
