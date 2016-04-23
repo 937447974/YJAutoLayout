@@ -158,11 +158,12 @@
     }
     UIView *result;
     NSInteger length = superviews1.count < superviews2.count ? superviews1.count : superviews2.count;
-    for (int i = 0; i<length; i++) {
-        result = superviews1[superviews1.count-length];
-        if (![result isEqual:superviews2[superviews2.count-length]]) {
+    for (int i = 1; i<=length; i++) {
+        view1 = superviews1[superviews1.count-i];
+        if (![view1 isEqual:superviews2[superviews2.count-i]]) {
             return result;
         }
+        result = view1;
     }
     return result;
     

@@ -51,11 +51,11 @@
     self.greenView = [[UIView alloc] initWithFrame:CGRectZero];
     self.greenView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:self.greenView];
-    BOOL c = [self.topLayoutGuide isKindOfClass:[UIView class]];
-//    [self testNSLayoutConstraint];
+ 
+//    [self testNSLayoutConstraint]; // IOS7测试通过
 //    [self testNSLayoutConstraintExtend];
 //    [self testNSLayoutAnchor];
-    [self testYJAutoLayout];
+    [self testYJAutoLayout]; // IOS7测试通过
 }
 
 #pragma mark - NSLayoutConstraint Test
@@ -67,18 +67,17 @@
     
     // 3 设置约束
     // 3.1 yellow约束
-    [NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeadingMargin multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1 constant:20].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_yellowView attribute:NSLayoutAttributeBottom multiplier:1 constant:20].active = YES;// yBottom
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:20]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1 constant:20]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_yellowView attribute:NSLayoutAttributeBottom multiplier:1 constant:20]];// yBottom
     // 3.2 green约束
-    [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:_greenView attribute:NSLayoutAttributeTrailing multiplier:1 constant:0].active = YES; // gTrailing
-     [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1 constant:20].active = YES;// gTop
-     [NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_greenView attribute:NSLayoutAttributeBottom multiplier:1 constant:20].active = YES;// gBottom
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_greenView attribute:NSLayoutAttributeTrailing multiplier:1 constant:20]]; // gTrailing
+     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1 constant:20]];// gTop
+     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_greenView attribute:NSLayoutAttributeBottom multiplier:1 constant:20]];// gBottom
     
     // 3.3 green和yellow的共有约束
-    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_yellowView attribute:NSLayoutAttributeTrailing multiplier:1 constant:30].active = YES; // 间距
-    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_yellowView attribute:NSLayoutAttributeWidth multiplier:1 constant:0].active = YES; // 等宽
-    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_yellowView attribute:NSLayoutAttributeTrailing multiplier:1 constant:30]]; // 间距
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_yellowView attribute:NSLayoutAttributeWidth multiplier:1 constant:0]]; // 等宽
     // 打印所有约束
     for (NSLayoutConstraint *constraint in self.view.constraints ) {
         NSLog(@"%@", constraint);
