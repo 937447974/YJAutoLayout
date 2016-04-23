@@ -23,7 +23,7 @@ QQ：937447974
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-04-22 | 项目启动 |
-| 2016-04-22 | YJAutoLayout/Extend完成 |
+| 2016-04-22 | 1.0 YJAutoLayout库和YJAutoLayout/Extend库完成 |
 
 ##Copyright
 
