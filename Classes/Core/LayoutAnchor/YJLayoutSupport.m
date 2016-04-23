@@ -18,8 +18,8 @@
     
     self = [super init];
     if (self) {
-        _topAnchor = [[YJLayoutYAxisAnchor alloc] initWithItem:layoutGuide attribute:NSLayoutAttributeTop];
-        _bottomAnchor = [[YJLayoutYAxisAnchor alloc] initWithItem:layoutGuide attribute:NSLayoutAttributeBottom];
+        _topLayout = [[YJLayoutYAxisAnchor alloc] initWithItem:layoutGuide attribute:NSLayoutAttributeTop];
+        _bottomLayout = [[YJLayoutYAxisAnchor alloc] initWithItem:layoutGuide attribute:NSLayoutAttributeBottom];
     }
     return self;
     

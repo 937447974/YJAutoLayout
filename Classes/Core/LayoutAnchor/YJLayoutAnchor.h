@@ -16,20 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class YJLayoutAnchor;
 
-
-/** 类泛型*/
-@protocol YJAnchorType <NSObject>
-
-@end
-
-
 // 相关block，链式执行
 /** NSLayoutConstraint.relation = NSLayoutRelationLessThanOrEqual*/
-typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqualTo)(YJLayoutAnchor<YJAnchorType> *anchor);
+typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqualTo)(YJLayoutAnchor *anchor);
 /** NSLayoutConstraint.relation = NSLayoutRelationEqual*/
-typedef NSLayoutConstraint * _Nonnull (^ EqualTo)(YJLayoutAnchor<YJAnchorType> *anchor);
+typedef NSLayoutConstraint * _Nonnull (^ EqualTo)(YJLayoutAnchor *anchor);
 /** NSLayoutConstraint.relation = NSLayoutRelationGreaterThanOrEqual*/
-typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor<YJAnchorType> *anchor);
+typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor *anchor);
 
 
 /** YJLayoutAnchor对应的协议*/
@@ -43,7 +36,7 @@ typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor<YJ
 
 
 /** 仿NSLayoutAnchor*/
-@interface YJLayoutAnchor<YJAnchorType> : NSObject <YJLayoutAnchorProtocol>
+@interface YJLayoutAnchor : NSObject <YJLayoutAnchorProtocol>
 
 @property (nonatomic, weak, readonly, nullable) id item;
 @property (nonatomic, readonly) NSLayoutAttribute attribute;

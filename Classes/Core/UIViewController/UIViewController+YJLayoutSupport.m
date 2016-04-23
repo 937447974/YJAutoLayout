@@ -14,11 +14,11 @@
 @implementation UIViewController (YJLayoutSupport)
 
 #pragma mark - getter
-- (YJLayoutSupport *)topLayout {
+- (YJLayoutSupport *)topLayoutSupport {
     return [[YJLayoutSupport alloc] initWithItem:self.topLayoutGuide];
 }
 
-- (YJLayoutSupport *)bottomLayout {
+- (YJLayoutSupport *)bottomLayoutSupport {
     return [[YJLayoutSupport alloc] initWithItem:self.bottomLayoutGuide];    
 }
 

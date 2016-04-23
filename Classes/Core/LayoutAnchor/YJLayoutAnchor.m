@@ -29,7 +29,7 @@
 - (LessThanOrEqualTo)lessThanOrEqualTo {
     
     __weak YJLayoutAnchor *wSelf = self;
-    LessThanOrEqualTo lessThanOrEqualTo = ^ (YJLayoutAnchor<YJAnchorType> *anchor) {
+    LessThanOrEqualTo lessThanOrEqualTo = ^ (YJLayoutAnchor *anchor) {
         return [NSLayoutConstraint constraintWithItem:wSelf.item attribute:wSelf.attribute lessThanOrEqualToItem:anchor.item attribute:anchor.attribute];
     };
     return lessThanOrEqualTo;
@@ -38,7 +38,7 @@
 - (EqualTo)equalTo {
     
     __weak YJLayoutAnchor *wSelf = self;
-    EqualTo equalTo = ^ (YJLayoutAnchor<YJAnchorType> *anchor) {
+    EqualTo equalTo = ^ (YJLayoutAnchor *anchor) {
         return [NSLayoutConstraint constraintWithItem:wSelf.item attribute:wSelf.attribute equalToItem:anchor.item attribute:anchor.attribute];
     };
     return equalTo;
@@ -48,7 +48,7 @@
 - (GreaterThanOrEqualTo)greaterThanOrEqualTo {
     
     __weak YJLayoutAnchor *wSelf = self;
-    GreaterThanOrEqualTo greaterThanOrEqualTo = ^ (YJLayoutAnchor<YJAnchorType> *anchor) {
+    GreaterThanOrEqualTo greaterThanOrEqualTo = ^ (YJLayoutAnchor *anchor) {
         return [NSLayoutConstraint constraintWithItem:wSelf.item attribute:wSelf.attribute greaterThanOrEqualToItem:anchor.item attribute:anchor.attribute];
     };
     return greaterThanOrEqualTo;

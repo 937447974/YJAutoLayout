@@ -17,8 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 仿UILayoutSupport扩展UIViewController*/
 @interface UIViewController (YJLayoutSupport)
 
-@property (nonatomic, readonly) YJLayoutSupport *topLayout NS_AVAILABLE_IOS(7_0); ///< 替代topLayoutGuide
-@property (nonatomic, readonly) YJLayoutSupport *bottomLayout NS_AVAILABLE_IOS(7_0); ///< 替代bottomLayoutGuide
+@property (nonatomic, readonly) YJLayoutSupport *topLayoutSupport NS_AVAILABLE_IOS(7_0); ///< 替代topLayoutGuide
+@property (nonatomic, readonly) YJLayoutSupport *bottomLayoutSupport NS_AVAILABLE_IOS(7_0); ///< 替代bottomLayoutGuide
 
 @end
 

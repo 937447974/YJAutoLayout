@@ -53,7 +53,8 @@
     [self.view addSubview:self.greenView];
     
 //    [self testNSLayoutConstraint];
-    [self testNSLayoutConstraintExtend];
+//    [self testNSLayoutConstraintExtend];
+    [self testNSLayoutAnchor];
 }
 
 #pragma mark - NSLayoutConstraint Test
@@ -99,6 +100,50 @@
     // 3 green和yellow的共有约束
     [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeLeading equalToItem:_yellowView attribute:NSLayoutAttributeTrailing].constants(30); // 间距
     [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeWidth equalToItem:_yellowView attribute:NSLayoutAttributeWidth]; // 等宽
+    
+}
+
+#pragma mark NSLayoutAnchor Test
+- (void)testNSLayoutAnchor {
+    
+    // 2 开启AutoLayout
+    _yellowView.translatesAutoresizingMaskIntoConstraints = NO;
+    _greenView.translatesAutoresizingMaskIntoConstraints = NO;
+    // 3 设置约束
+    // 3.1 yellow约束
+    [_yellowView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
+    [_yellowView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
+    [self.bottomLayoutGuide.topAnchor constraintEqualToAnchor:_yellowView.bottomAnchor constant:20].active = YES;
+    // 3.2 green约束
+    [_greenView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
+    [self.view.trailingAnchor constraintEqualToAnchor:_greenView.trailingAnchor constant:20].active = YES;
+    [self.bottomLayoutGuide.topAnchor constraintEqualToAnchor:_greenView.bottomAnchor constant:20].active = YES;
+    // 3.3 green和yellow的共有约束
+    [_greenView.leadingAnchor constraintEqualToAnchor:_yellowView.trailingAnchor constant:30].active = YES; // 间距
+    [_greenView.widthAnchor constraintEqualToAnchor:_yellowView.widthAnchor].active = YES; // 等宽
+    
+}
+
+#pragma mark YJAutoLayout Test
+- (void)testYJAutoLayout {
+    
+    // 3.1 yellow约束
+    [_yellowView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
+    [_yellowView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
+    [self.bottomLayoutGuide.topAnchor constraintEqualToAnchor:_yellowView.bottomAnchor constant:20].active = YES;
+    _yellowView.leadingLayout.equalTo(self.view.leadingLayout).constants(20);
+    _yellowView.topLayout.equalTo(self.topLayoutSupport.bottomLayout).constants(20);
+//    self.bottomLayout.topAnchor.equalTo()
+//    [_yellowView.leadingLayout dd:self.view.leadingLayout];
+    
+    
+    // 3.2 green约束
+    [_greenView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
+    [self.view.trailingAnchor constraintEqualToAnchor:_greenView.trailingAnchor constant:20].active = YES;
+    [self.bottomLayoutGuide.topAnchor constraintEqualToAnchor:_greenView.bottomAnchor constant:20].active = YES;
+    // 3.3 green和yellow的共有约束
+    [_greenView.leadingAnchor constraintEqualToAnchor:_yellowView.trailingAnchor constant:30].active = YES; // 间距
+    [_greenView.widthAnchor constraintEqualToAnchor:_yellowView.widthAnchor].active = YES; // 等宽
     
 }
 

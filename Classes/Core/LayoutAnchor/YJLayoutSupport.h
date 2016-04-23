@@ -17,9 +17,16 @@ NS_CLASS_AVAILABLE_IOS(7_0)
 
 /* Constraint creation conveniences. See YJLayoutAnchor.h for details.
  */
-@property (nonatomic, strong, readonly) YJLayoutYAxisAnchor *topAnchor;
-@property (nonatomic, strong, readonly) YJLayoutYAxisAnchor *bottomAnchor;
+@property (nonatomic, strong, readonly) YJLayoutYAxisAnchor *topLayout; ///< 替换topAnchor
+@property (nonatomic, strong, readonly) YJLayoutYAxisAnchor *bottomLayout; ///< 替换bottomAnchor
 
+/**
+ *  初始化YJLayoutSupport
+ *
+ *  @param layoutGuide topLayoutGuide/bottomLayoutGuide
+ *
+ *  @return instancetype
+ */
 - (instancetype)initWithItem:(id<UILayoutSupport>)layoutGuide;
 
 @end

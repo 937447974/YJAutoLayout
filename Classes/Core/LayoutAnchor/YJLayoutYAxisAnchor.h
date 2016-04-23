@@ -11,7 +11,11 @@
 
 #import "YJLayoutAnchor.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** 仿LayoutYAxisAnchor*/
 @interface YJLayoutYAxisAnchor : YJLayoutAnchor
 
 @end
+
+NS_ASSUME_NONNULL_END
