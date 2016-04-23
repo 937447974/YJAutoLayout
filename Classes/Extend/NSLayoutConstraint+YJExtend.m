@@ -181,4 +181,24 @@
     
 }
 
+- (Multiplier)multipliers {
+    
+    __block __weak NSLayoutConstraint *lcWeak = self;
+    Multiplier multipliers = ^(CGFloat multiplier) {
+        UIView *viewTemp1 = (UIView *)lcWeak.firstItem;
+        UIView *viewTemp2 = (UIView *)lcWeak.secondItem;
+        UIView *superView = [NSLayoutConstraint findRootView:viewTemp1 toItem:viewTemp2];
+        [superView removeConstraint:lcWeak];
+        lcWeak = [NSLayoutConstraint constraintWithItem:lcWeak.firstItem attribute:lcWeak.firstAttribute relatedBy:lcWeak.relation toItem:lcWeak.secondItem attribute:lcWeak.secondAttribute multiplier:multiplier constant:lcWeak.constant];
+        if ([lcWeak respondsToSelector:@selector(setActive:)]) { // IOS8才支持active属性
+            [lcWeak setActive:YES];
+        } else { // IOS8以下添加到相同父节点
+            [superView addConstraint:lcWeak];
+        }
+        return lcWeak;
+    };
+    return multipliers;
+    
+}
+
 @end

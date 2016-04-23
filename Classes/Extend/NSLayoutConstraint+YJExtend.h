@@ -14,12 +14,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NSLayoutConstraint * _Nonnull (^ Constant)(CGFloat constant);
+typedef NSLayoutConstraint * _Nonnull (^ Multiplier)(CGFloat multiplier);
 
 /** NSLayoutConstraint扩展*/
 @interface NSLayoutConstraint (YJExtend)
 
-/** 修改constant的值*/
-@property (nonatomic, copy, readonly) Constant constants;
+@property (nonatomic, readonly) Constant constants;     ///< 修改constant的值
+@property (nonatomic, readonly) Multiplier multipliers; ///< 修改multiplier的值
 
 #pragma mark - (+)
 /**
