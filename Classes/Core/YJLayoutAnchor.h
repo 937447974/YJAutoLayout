@@ -7,21 +7,40 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSLayoutConstraint+YJExtend.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class YJLayoutAnchor;
 
-typedef NSLayoutConstraint * _Nonnull (^ EqualTo)(YJLayoutAnchor *anchor);
-typedef NSLayoutConstraint * _Nonnull (^ GreaterThan)(YJLayoutAnchor *anchor);
-typedef NSLayoutConstraint * _Nonnull (^ LessThan)(YJLayoutAnchor *anchor);
+
+/** 类泛型*/
+@protocol YJAnchorType <NSObject>
+
+@end
+
+
+// 相关block，链式执行
+/** NSLayoutConstraint.relation = NSLayoutRelationLessThanOrEqual*/
+typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqual)(YJLayoutAnchor<YJAnchorType> *anchor);
+/** NSLayoutConstraint.relation = NSLayoutRelationEqual*/
+typedef NSLayoutConstraint * _Nonnull (^ Equal)(YJLayoutAnchor<YJAnchorType> *anchor);
+/** NSLayoutConstraint.relation = NSLayoutRelationGreaterThanOrEqual*/
+typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqual)(YJLayoutAnchor<YJAnchorType> *anchor);
+
+
+/** YJLayoutAnchor对应的协议*/
+@protocol YJLayoutAnchorProtocol <NSObject>
+
+@property (nonatomic, copy, readonly) LessThanOrEqual lessThanOrEqual;
+@property (nonatomic, copy, readonly) Equal equal;
+@property (nonatomic, copy, readonly) GreaterThanOrEqual greaterThanOrEqual;
+
+@end
+
 
 /** 仿NSLayoutAnchor*/
-@interface YJLayoutAnchor : NSObject
-
-@property (nonatomic, copy) EqualTo equalTo;
-@property (nonatomic, copy) GreaterThan greaterThan;
-@property (nonatomic, copy) LessThan lessThan;
+@interface YJLayoutAnchor<YJAnchorType> : NSObject <YJLayoutAnchorProtocol>
 
 @property (nonatomic, readonly) id item;
 @property (nonatomic, readonly) NSLayoutAttribute attribute;
