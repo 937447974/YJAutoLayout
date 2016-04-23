@@ -2,7 +2,10 @@
 //  YJLayoutSupport.h
 //  YJAutoLayout
 //
-//  Created by admin on 16/4/23.
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by 阳君 on 16/4/23.
 //  Copyright © 2016年 YJ. All rights reserved.
 //
 
@@ -16,8 +19,6 @@ NS_CLASS_AVAILABLE_IOS(7_0)
  */
 @property (nonatomic, strong, readonly) YJLayoutYAxisAnchor *topAnchor;
 @property (nonatomic, strong, readonly) YJLayoutYAxisAnchor *bottomAnchor;
-
-@property (nonatomic, strong, readonly,) id<UILayoutSupport> layoutGuide;
 
 - (instancetype)initWithItem:(id<UILayoutSupport>)layoutGuide;
 

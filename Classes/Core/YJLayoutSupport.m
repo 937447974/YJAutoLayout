@@ -2,7 +2,10 @@
 //  YJLayoutSupport.m
 //  YJAutoLayout
 //
-//  Created by admin on 16/4/23.
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by 阳君 on 16/4/23.
 //  Copyright © 2016年 YJ. All rights reserved.
 //
 
@@ -15,7 +18,8 @@
     
     self = [super init];
     if (self) {
-        _layoutGuide = layoutGuide;
+        _topAnchor = [[YJLayoutYAxisAnchor alloc] initWithItem:layoutGuide attribute:NSLayoutAttributeTop];
+        _bottomAnchor = [[YJLayoutYAxisAnchor alloc] initWithItem:layoutGuide attribute:NSLayoutAttributeBottom];
     }
     return self;
     

@@ -2,7 +2,10 @@
 //  NSLayoutConstraint+YJExtend.h
 //  YJAutoLayout
 //
-//  Created by admin on 16/4/22.
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by 阳君 on 16/4/22.
 //  Copyright © 2016年 YJ. All rights reserved.
 //
 
@@ -11,9 +14,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NSLayoutConstraint * _Nonnull (^ Constant)(CGFloat constant);
-
-// view1.attr1 = view2.attr2 * multiplier + constant
-// 生成之后，ios8 默认NSLayoutConstraint.active = YES;
 
 /** NSLayoutConstraint扩展*/
 @interface NSLayoutConstraint (YJExtend)

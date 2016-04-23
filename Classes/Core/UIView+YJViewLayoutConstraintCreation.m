@@ -2,7 +2,10 @@
 //  UIView+YJViewLayoutConstraintCreation.m
 //  YJAutoLayout
 //
-//  Created by admin on 16/4/23.
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by 阳君 on 16/4/23.
 //  Copyright © 2016年 YJ. All rights reserved.
 //
 
@@ -10,12 +13,44 @@
 
 @implementation UIView (YJViewLayoutConstraintCreation)
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (YJLayoutXAxisAnchor *)leftLayout {
+    return [[YJLayoutXAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeLeft];    
 }
-*/
+
+- (YJLayoutXAxisAnchor *)rightLayout {
+    return [[YJLayoutXAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeRight];
+}
+
+- (YJLayoutYAxisAnchor *)topLayout {
+    return [[YJLayoutYAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeTop];
+}
+
+- (YJLayoutYAxisAnchor *)bottomLayout {
+    return [[YJLayoutYAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeBottom];
+}
+
+- (YJLayoutXAxisAnchor *)leadingLayout {
+    return [[YJLayoutXAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeLeading];
+}
+
+- (YJLayoutXAxisAnchor *)trailingLayout {
+    return [[YJLayoutXAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeTrailing];
+}
+
+- (YJLayoutDimension *)widthLayout {
+    return [[YJLayoutDimension alloc] initWithItem:self attribute:NSLayoutAttributeWidth];
+}
+
+- (YJLayoutDimension *)heightLayout {
+    return [[YJLayoutDimension alloc] initWithItem:self attribute:NSLayoutAttributeHeight];
+}
+
+- (YJLayoutXAxisAnchor *)centerXLayout {
+    return [[YJLayoutXAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeCenterX];
+}
+
+- (YJLayoutYAxisAnchor *)centerYLayout {
+    return [[YJLayoutYAxisAnchor alloc] initWithItem:self attribute:NSLayoutAttributeCenterY];
+}
 
 @end

@@ -2,7 +2,10 @@
 //  YJLayoutAnchor.h
 //  YJAutoLayout
 //
-//  Created by admin on 16/4/22.
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by 阳君 on 16/4/22.
 //  Copyright © 2016年 YJ. All rights reserved.
 //
 
@@ -42,7 +45,7 @@ typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor<YJ
 /** 仿NSLayoutAnchor*/
 @interface YJLayoutAnchor<YJAnchorType> : NSObject <YJLayoutAnchorProtocol>
 
-@property (nonatomic, readonly, nullable) id item;
+@property (nonatomic, weak, readonly, nullable) id item;
 @property (nonatomic, readonly) NSLayoutAttribute attribute;
 
 - (instancetype)initWithItem:(id)item attribute:(NSLayoutAttribute)attribute;
