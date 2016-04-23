@@ -49,20 +49,20 @@ Pod::Spec.new do |s|
 
     # ——— Subspecs
     s.subspec 'Core' do |core|
-        core.dependency 'YJAutoLayout/Core/UIView', 'YJAutoLayout/Core/UIViewController'
+        core.default_subspec = 'UIView', 'UIViewController'
         # UIView扩展
         core.subspec 'UIView' do |v|
-            v.source_files = 'Classes/UIView/*.{h,m}'
+            v.source_files = 'Classes/Core/UIView/*.{h,m}'
             v.dependency 'YJAutoLayout/Core/LayoutAnchor'
         end
         # UIViewController扩展
         core.subspec 'UIViewController' do |vc|
-            vc.source_files = 'Classes/UIViewController/*.{h,m}'
+            vc.source_files = 'Classes/Core/UIViewController/*.{h,m}'
             vc.dependency 'YJAutoLayout/Core/LayoutAnchor'
         end
         # AutoLayout支持
         core.subspec 'LayoutAnchor' do |la|
-            la.source_files = 'Classes/LayoutAnchor/*.{h,m}'
+            la.source_files = 'Classes/Core/LayoutAnchor/*.{h,m}'
             la.dependency 'YJAutoLayout/Extend'
         end
     end
