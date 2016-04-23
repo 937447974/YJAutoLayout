@@ -1,0 +1,6 @@
+framework module YJAutoLayout {
+  umbrella header "YJAutoLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}
