@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
 
     # ――― Source Code
     s.source_files  = "Classes/*.{h,m}", "README.md"
-    s.default_subspec = 'Core'
+    s.default_subspec = 'Core/UIView', 'Core/UIViewController'
 
     # ――― Project Linking
     s.frameworks = "UIKit", "Foundation"
@@ -49,7 +49,6 @@ Pod::Spec.new do |s|
 
     # ——— Subspecs
     s.subspec 'Core' do |core|
-        core.default_subspec = 'UIView', 'UIViewController'
         # UIView扩展
         core.subspec 'UIView' do |v|
             v.source_files = 'Classes/Core/UIView/*.{h,m}'
