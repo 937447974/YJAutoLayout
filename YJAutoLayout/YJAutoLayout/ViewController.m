@@ -86,17 +86,16 @@
     
     // 设置约束
     // 1 yellow约束
-    [NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeLeading toItem:self.view attribute:NSLayoutAttributeLeadingMargin];
-    [NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeTop toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom constant:20];
-    [NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop toItem:_yellowView attribute:NSLayoutAttributeBottom constant:20];// yBottom
+    [NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeLeading equalToItem:self.view attribute:NSLayoutAttributeLeadingMargin]; // yLeading
+    [NSLayoutConstraint constraintWithItem:_yellowView attribute:NSLayoutAttributeTop equalToItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom constant:20]; // yTop
+    [NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop equalToItem:_yellowView attribute:NSLayoutAttributeBottom constant:20]; // yBottom
     // 2 green约束
-    [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeTrailingMargin  toItem:_greenView attribute:NSLayoutAttributeTrailing]; // gTrailing
-    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeTop toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom].constants(20);// gTop
-    [NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop toItem:_greenView attribute:NSLayoutAttributeBottom].constants(20);// gBottom
-    
+    [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeTrailingMargin equalToItem:_greenView attribute:NSLayoutAttributeTrailing]; // gTrailing
+    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeTop equalToItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom].constants(20);// gTop
+    [NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide attribute:NSLayoutAttributeTop equalToItem:_greenView attribute:NSLayoutAttributeBottom].constants(20);// gBottom
     // 3 green和yellow的共有约束
-    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeLeading  toItem:_yellowView attribute:NSLayoutAttributeTrailing].constants(30); // 间距
-    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeWidth toItem:_yellowView attribute:NSLayoutAttributeWidth]; // 等宽
+    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeLeading equalToItem:_yellowView attribute:NSLayoutAttributeTrailing].constants(30); // 间距
+    [NSLayoutConstraint constraintWithItem:_greenView attribute:NSLayoutAttributeWidth equalToItem:_yellowView attribute:NSLayoutAttributeWidth]; // 等宽
     
 }
 

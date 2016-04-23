@@ -22,19 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 相关block，链式执行
 /** NSLayoutConstraint.relation = NSLayoutRelationLessThanOrEqual*/
-typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqual)(YJLayoutAnchor<YJAnchorType> *anchor);
+typedef NSLayoutConstraint * _Nonnull (^ LessThanOrEqualTo)(YJLayoutAnchor<YJAnchorType> *anchor);
 /** NSLayoutConstraint.relation = NSLayoutRelationEqual*/
-typedef NSLayoutConstraint * _Nonnull (^ Equal)(YJLayoutAnchor<YJAnchorType> *anchor);
+typedef NSLayoutConstraint * _Nonnull (^ EqualTo)(YJLayoutAnchor<YJAnchorType> *anchor);
 /** NSLayoutConstraint.relation = NSLayoutRelationGreaterThanOrEqual*/
-typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqual)(YJLayoutAnchor<YJAnchorType> *anchor);
+typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor<YJAnchorType> *anchor);
 
 
 /** YJLayoutAnchor对应的协议*/
 @protocol YJLayoutAnchorProtocol <NSObject>
 
-@property (nonatomic, copy, readonly) LessThanOrEqual lessThanOrEqual;
-@property (nonatomic, copy, readonly) Equal equal;
-@property (nonatomic, copy, readonly) GreaterThanOrEqual greaterThanOrEqual;
+@property (nonatomic, copy, readonly) LessThanOrEqualTo lessThanOrEqualTo;
+@property (nonatomic, copy, readonly) EqualTo equalTo;
+@property (nonatomic, copy, readonly) GreaterThanOrEqualTo greaterThanOrEqualTo;
 
 @end
 
