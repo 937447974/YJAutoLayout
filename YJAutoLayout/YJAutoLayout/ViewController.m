@@ -54,7 +54,8 @@
     
 //    [self testNSLayoutConstraint];
 //    [self testNSLayoutConstraintExtend];
-    [self testNSLayoutAnchor];
+//    [self testNSLayoutAnchor];
+    [self testYJAutoLayout];
 }
 
 #pragma mark - NSLayoutConstraint Test
@@ -127,23 +128,17 @@
 #pragma mark YJAutoLayout Test
 - (void)testYJAutoLayout {
     
-    // 3.1 yellow约束
-    [_yellowView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
-    [_yellowView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
-    [self.bottomLayoutGuide.topAnchor constraintEqualToAnchor:_yellowView.bottomAnchor constant:20].active = YES;
+    // 1 yellow约束
     _yellowView.leadingLayout.equalTo(self.view.leadingLayout).constants(20);
     _yellowView.topLayout.equalTo(self.topLayoutSupport.bottomLayout).constants(20);
-//    self.bottomLayout.topAnchor.equalTo()
-//    [_yellowView.leadingLayout dd:self.view.leadingLayout];
-    
-    
-    // 3.2 green约束
-    [_greenView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
-    [self.view.trailingAnchor constraintEqualToAnchor:_greenView.trailingAnchor constant:20].active = YES;
-    [self.bottomLayoutGuide.topAnchor constraintEqualToAnchor:_greenView.bottomAnchor constant:20].active = YES;
-    // 3.3 green和yellow的共有约束
-    [_greenView.leadingAnchor constraintEqualToAnchor:_yellowView.trailingAnchor constant:30].active = YES; // 间距
-    [_greenView.widthAnchor constraintEqualToAnchor:_yellowView.widthAnchor].active = YES; // 等宽
+    self.bottomLayoutSupport.topLayout.equalTo(_yellowView.bottomLayout).constants(20);
+    // 2 green约束
+    _greenView.topLayout.equalTo(self.topLayoutSupport.bottomLayout).constants(20);
+    self.view.trailingLayout.equalTo(_greenView.trailingLayout).constants(20);
+    self.bottomLayoutSupport.topLayout.equalTo(_greenView.bottomLayout).constants(20);
+    // 3 green和yellow的共有约束
+    _greenView.leadingLayout.equalTo(_yellowView.trailingLayout).constants(30);
+    _greenView.widthLayout.equalTo(_yellowView.widthLayout);
     
 }
 
