@@ -26,10 +26,12 @@ typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualToConstant)(CGFloat c
 @protocol YJLayoutDimensionProtocol <YJLayoutAnchorProtocol>
 
 // These methods return an inactive constraint of the form thisVariable = constant.
-
-@property (nonatomic, copy, readonly) EqualToConstant equalToConstant;
-@property (nonatomic, copy, readonly) GreaterThanOrEqualToConstant greaterThanOrEqualToConstant;
+/** use .lessThanOrEqualToConstant(CGFloat)*/
 @property (nonatomic, copy, readonly) LessThanOrEqualToConstant lessThanOrEqualToConstant;
+/** use .equalToConstant(CGFloat)*/
+@property (nonatomic, copy, readonly) EqualToConstant equalToConstant;
+/** use .greaterThanOrEqualToConstant(CGFloat)*/
+@property (nonatomic, copy, readonly) GreaterThanOrEqualToConstant greaterThanOrEqualToConstant;
 
 @end
 

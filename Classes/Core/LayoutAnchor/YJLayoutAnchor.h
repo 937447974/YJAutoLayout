@@ -28,8 +28,11 @@ typedef NSLayoutConstraint * _Nonnull (^ GreaterThanOrEqualTo)(YJLayoutAnchor *a
 /** YJLayoutAnchor对应的协议*/
 @protocol YJLayoutAnchorProtocol <NSObject>
 
+/** use .lessThanOrEqualTo(YJLayoutAnchor)*/
 @property (nonatomic, copy, readonly) LessThanOrEqualTo lessThanOrEqualTo;
+/** use .equalTo(YJLayoutAnchor)*/
 @property (nonatomic, copy, readonly) EqualTo equalTo;
+/** use .greaterThanOrEqualTo(YJLayoutAnchor)*/
 @property (nonatomic, copy, readonly) GreaterThanOrEqualTo greaterThanOrEqualTo;
 
 @end
