@@ -146,6 +146,7 @@
     if (view2 == nil) {
         return view1;
     }
+    // 添加数据源
     NSMutableArray<UIView *> *superviews1 = [NSMutableArray array];
     NSMutableArray<UIView *> *superviews2 = [NSMutableArray array];
     while (view1) {
@@ -156,16 +157,21 @@
         [superviews2 addObject:view2];
         view2 = view2.superview;
     }
-    UIView *result;
-    NSInteger length = superviews1.count < superviews2.count ? superviews1.count : superviews2.count;
-    for (int i = 1; i<=length; i++) {
-        view1 = superviews1[superviews1.count-i];
-        if (![view1 isEqual:superviews2[superviews2.count-i]]) {
-            return result;
-        }
-        result = view1;
+    // 去掉多余header
+    NSInteger length = superviews1.count - superviews2.count;
+    if (length > 0) {
+        [superviews1 removeObjectsInRange:NSMakeRange(0, length)];
+    } else if (length < 0) {
+        [superviews2 removeObjectsInRange:NSMakeRange(0, -length)];
     }
-    return result;
+    // 搜索共同父类
+    for (int i = 0; i < superviews1.count; i++) {
+        view1 = superviews1[i];
+        if ([view1 isEqual:superviews2[i]]) {
+            return view1;
+        }
+    }
+    return view1;
     
 }
 

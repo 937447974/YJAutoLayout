@@ -159,17 +159,13 @@
 }
 
 - (void)testCombinativeLayout {
-    
-    [self.yellowView removeFromSuperview];
-    [self.greenView removeFromSuperview];
-    [self.view addSubview:self.yellowView];
-    
+  
+//    self.yellowView.topSpaceToSuper(0).leadingSpaceToSuper(0).bottomSpaceToSuper(0).trailingSpaceToSuper(0);
+     // 等价
 //    self.yellowView.sizeLayoutTo(self.view);
 //    self.yellowView.centerLayoutTo(self.view);
-    // 等价
-//    self.yellowView.boundsLayoutTo(self.view);
-    // 等价
-    self.yellowView.topSpaceToSuper(0).leadingSpaceToSuper(0).bottomSpaceToSuper(0).trailingSpaceToSuper(0);
+     // 等价
+    self.yellowView.boundsLayoutTo(self.view);
     
 }
 

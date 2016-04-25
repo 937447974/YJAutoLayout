@@ -66,6 +66,7 @@ view1.leadingLayout.equalTo(view2.trailingLayout).multipliers(m).constants(c)
 
 #2 实战演示 
 
+##2.1 基础实战
 接下来完成一个如下所示的约束图。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121806.jpg)
@@ -101,6 +102,33 @@ greenView.leadingLayout.equalTo(yellowView.trailingLayout).constants(30);
 greenView.widthLayout.equalTo(yellowView.widthLayout);
 ```
 
+##2.2 高级实战
+
+你还可以多个约束同时设置。
+
+上面的效果图即可改为
+
+```objc
+// 1 yellow约束
+_yellowView.topSpaceToSuper(20).bottomSpaceToSuper(20).leadingSpaceToSuper(20);
+// 2 green约束
+_greenView.topSpaceToSuper(20).bottomSpaceToSuper(20).trailingSpaceToSuper(20);
+// 3 green和yellow的共有约束
+_greenView.leadingLayout.equalTo(_yellowView.trailingLayout).constants(30);
+_greenView.widthLayout.equalTo(_yellowView.widthLayout);
+```
+
+如果是等bounds还可以使用如下写法。
+
+```objc
+self.yellowView.topSpaceToSuper(0).leadingSpaceToSuper(0).bottomSpaceToSuper(0).trailingSpaceToSuper(0);
+// 等价
+self.yellowView.sizeLayoutTo(self.view);
+self.yellowView.centerLayoutTo(self.view);
+// 等价
+self.yellowView.boundsLayoutTo(self.view);  
+```
+
 ----------
 
 #<a id="Appendix">Appendix
@@ -126,6 +154,7 @@ YJ技术支持群：557445088
 | 2016-04-22 | 项目启动 |
 | 2016-04-22 | 1.0 YJAutoLayout库和YJAutoLayout/Extend库完成 |
 | 2016-04-25 | 1.0.1 YJAutoLayout使用文档完成 |
+| 2016-04-26 | 1.1 UIView+YJViewLayoutConstraintCreation增加多个约束方法 |
 
 ##Copyright
 
