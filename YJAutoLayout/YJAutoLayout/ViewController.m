@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     /*
      NSLayoutConstraint(item view1: AnyObject, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem view2: AnyObject?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat)
      遵循的原则，在UI上，
@@ -45,17 +46,21 @@
     // 1 添加View
     // 黄View
     self.yellowView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.yellowView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:self.yellowView];
+    self.yellowView.backgroundColor = [UIColor yellowColor];
+    self.yellowView.tag = 1;
     // 绿View
     self.greenView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.greenView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:self.greenView];
+    self.greenView.backgroundColor = [UIColor greenColor];
+    self.greenView.tag = 2;    
  
 //    [self testNSLayoutConstraint]; // IOS7测试通过
 //    [self testNSLayoutConstraintExtend];
 //    [self testNSLayoutAnchor];
-    [self testYJAutoLayout]; // IOS7测试通过
+//    [self testYJAutoLayout]; // IOS7测试通过
+//    [self testSpaceToSuper];
+    [self testCombinativeLayout];
 }
 
 #pragma mark - NSLayoutConstraint Test
@@ -124,7 +129,7 @@
     
 }
 
-#pragma mark YJAutoLayout Test
+#pragma mark - YJAutoLayout Test
 - (void)testYJAutoLayout {
     
     // 1 yellow约束
@@ -138,6 +143,33 @@
     // 3 green和yellow的共有约束
     _greenView.leadingLayout.equalTo(_yellowView.trailingLayout).constants(30);
     _greenView.widthLayout.equalTo(_yellowView.widthLayout);
+    
+}
+
+- (void)testSpaceToSuper {
+    
+    // 1 yellow约束
+    _yellowView.topSpaceToSuper(20).bottomSpaceToSuper(20).leadingSpaceToSuper(20);
+    // 2 green约束
+    _greenView.topSpaceToSuper(20).bottomSpaceToSuper(20).trailingSpaceToSuper(20);
+    // 3 green和yellow的共有约束
+    _greenView.leadingLayout.equalTo(_yellowView.trailingLayout).constants(30);
+    _greenView.widthLayout.equalTo(_yellowView.widthLayout);
+    
+}
+
+- (void)testCombinativeLayout {
+    
+    [self.yellowView removeFromSuperview];
+    [self.greenView removeFromSuperview];
+    [self.view addSubview:self.yellowView];
+    
+//    self.yellowView.sizeLayoutTo(self.view);
+//    self.yellowView.centerLayoutTo(self.view);
+    // 等价
+//    self.yellowView.boundsLayoutTo(self.view);
+    // 等价
+    self.yellowView.topSpaceToSuper(0).leadingSpaceToSuper(0).bottomSpaceToSuper(0).trailingSpaceToSuper(0);
     
 }
 

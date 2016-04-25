@@ -26,8 +26,9 @@ NS_ASSUME_NONNULL_END
 // 公式：view1.attr1 = view2.attr2 * multiplier + constant
 //
 // 遵循的原则，在UI上，
-// 1. 左边的View对应view1，右边的View对应view2；
-// 2. 下面的View对应View1，上面的View对应View2。
+// 1. trailing的View对应view1，leading的View对应view2
+// 2. bottom的View对应View1，top的View对应View2
+// 3. above的view对应view1，below的view对应view2
 //
 // 综上所述，即右下的view放在前面，左上的view放在后面。
-// 口诀就是：先右下后左上
+// 口诀就是：先右下表后左上底

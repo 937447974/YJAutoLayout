@@ -106,8 +106,8 @@
     UIView *superView = [self findRootView:viewTemp1 toItem:viewTemp2];
     NSLayoutConstraint *lc = [self findConstraintWithView:superView Item:view1 attribute:attr1 toItem:view2 attribute:attr2];
     if (!lc) { // 首次创建
-        viewTemp2.translatesAutoresizingMaskIntoConstraints = NO;
         viewTemp1.translatesAutoresizingMaskIntoConstraints = NO;
+        viewTemp2.translatesAutoresizingMaskIntoConstraints = NO;
         lc = [self constraintWithItem:view1 attribute:attr1 relatedBy:relation toItem:view2 attribute:attr2 multiplier:multiplier constant:c];
         if ([lc respondsToSelector:@selector(setActive:)]) { // IOS8才支持active属性
             [lc setActive:YES];
