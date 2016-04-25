@@ -61,6 +61,7 @@ view1.leadingLayout.equalTo(view2.trailingLayout).multipliers(m).constants(c)
 ```
 
 > 当m=1时，可不写`.multipliers(m)`;
+> 
 > 当c=0时，可不写.constants(c)
 
 #2 实战演示 
