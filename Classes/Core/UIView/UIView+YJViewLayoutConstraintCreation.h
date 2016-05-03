@@ -44,7 +44,7 @@ typedef void (^ CombinativeLayout)(UIView *view);
 #pragma mark - CombinativeLayout
 @property (nonatomic, readonly) CombinativeLayout sizeLayoutTo;   ///< 等宽高 use .sizeLayoutTo(UIView)
 @property (nonatomic, readonly) CombinativeLayout centerLayoutTo; ///< 中心点对齐 use .centerLayoutTo(UIView)
-@property (nonatomic, readonly) CombinativeLayout boundsLayoutTo; ///< 等宽高+中心点对齐 use .topSpaceToSuper(CGFloat)
+@property (nonatomic, readonly) CombinativeLayout boundsLayoutTo; ///< 等宽高+中心点对齐 use .boundsLayoutTo(UIView)
 
 @end
 
