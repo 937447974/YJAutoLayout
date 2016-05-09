@@ -155,6 +155,7 @@ YJ技术支持群：557445088
 | 2016-04-22 | 1.0 YJAutoLayout库和YJAutoLayout/Extend库完成 |
 | 2016-04-25 | 1.0.1 YJAutoLayout使用文档完成 |
 | 2016-04-26 | 1.1.0 UIView+YJViewLayoutConstraintCreation增加多个约束方法 |
+| 2016-05-09 | 1.1.1 注释更新，pod下载时去掉Readme.md |
 
 ##Copyright
 

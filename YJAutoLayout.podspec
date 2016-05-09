@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
     # ―――  Spec Metadata
     s.name     = "YJAutoLayout"
-    s.version  = "1.1.0"
+    s.version  = "1.1.1"
     s.summary  = "NSLayoutConstraint的相关扩展和封装"
     s.homepage = "https://github.com/937447974/YJAutoLayout"
     s.description  = <<-DESC
@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
     s.source = { :git => "https://github.com/937447974/YJAutoLayout.git", :tag => "v#{s.version}" }
 
     # ――― Source Code
-    s.source_files  = "Classes/*.{h,m}", "README.md"
+    s.source_files  = "Classes/*.{h,m}"
     s.default_subspec = 'Core/UIView', 'Core/UIViewController'
 
     # ――― Project Linking
