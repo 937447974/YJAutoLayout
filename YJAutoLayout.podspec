@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
     # ―――  Spec Metadata
     s.name     = "YJAutoLayout"
-    s.version  = "1.1.1"
+    s.version  = "1.1.2"
     s.summary  = "NSLayoutConstraint的相关扩展和封装"
     s.homepage = "https://github.com/937447974/YJAutoLayout"
     s.description  = <<-DESC
