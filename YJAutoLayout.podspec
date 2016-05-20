@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
     # ―――  Spec Metadata
     s.name     = "YJAutoLayout"
-    s.version  = "1.1.2"
+    s.version  = "1.1.3"
     s.summary  = "NSLayoutConstraint的相关扩展和封装"
     s.homepage = "https://github.com/937447974/YJAutoLayout"
     s.description  = <<-DESC
@@ -38,36 +38,12 @@ Pod::Spec.new do |s|
     s.source = { :git => "https://github.com/937447974/YJAutoLayout.git", :tag => "v#{s.version}" }
 
     # ――― Source Code
-    s.source_files  = "Classes/*.{h,m}"
-    s.default_subspec = 'Core/UIView', 'Core/UIViewController'
+    s.dependency 'YJCocoa/CocoaTouchLayer/UIKit/AutoLayout'
 
     # ――― Project Linking
     s.frameworks = "UIKit", "Foundation"
 
     # ――― Project Settings
     s.requires_arc = true
-
-    # ——— Subspecs
-    s.subspec 'Core' do |core|
-        # UIView扩展
-        core.subspec 'UIView' do |v|
-            v.source_files = 'Classes/Core/UIView/*.{h,m}'
-            v.dependency 'YJAutoLayout/Core/LayoutAnchor'
-        end
-        # UIViewController扩展
-        core.subspec 'UIViewController' do |vc|
-            vc.source_files = 'Classes/Core/UIViewController/*.{h,m}'
-            vc.dependency 'YJAutoLayout/Core/LayoutAnchor'
-        end
-        # AutoLayout支持
-        core.subspec 'LayoutAnchor' do |la|
-            la.source_files = 'Classes/Core/LayoutAnchor/*.{h,m}'
-            la.dependency 'YJAutoLayout/Extend'
-        end
-    end
-
-    s.subspec 'Extend' do |e|
-        e.source_files = 'Classes/Extend/*.{h,m}'
-    end
 
 end
