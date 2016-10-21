@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
     # ―――  Spec Metadata
     s.name     = "YJAutoLayout"
-    s.version  = "1.1.3"
+    s.version  = "1.1.4"
     s.summary  = "NSLayoutConstraint的相关扩展和封装"
     s.homepage = "https://github.com/937447974/YJAutoLayout"
     s.description  = <<-DESC
@@ -38,7 +38,9 @@ Pod::Spec.new do |s|
     s.source = { :git => "https://github.com/937447974/YJAutoLayout.git", :tag => "v#{s.version}" }
 
     # ――― Source Code
-    s.dependency 'YJCocoa/CocoaTouchLayer/UIKit/AutoLayout'
+    s.dependency 'YJCocoa'
+    s.deprecated = true
+    s.deprecated_in_favor_of = "YJCocoa"
 
     # ――― Project Linking
     s.frameworks = "UIKit", "Foundation"
